@@ -16,10 +16,19 @@ module.exports = function(grunt) {
                     'build/js/bundle.js': 'public/js/**/*.js'
                 }
             }
+        },
+
+        uglify: {
+            js: {
+                files: {
+                    'build/js/bundle.min.js': 'build/js/bundle.js'
+                }
+            }
         }
     });
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.registerTask('default', ['jshint']);
 };
