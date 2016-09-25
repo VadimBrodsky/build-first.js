@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         },
 
         uglify: {
-            js: {
+            bundle: {
                 files: {
                     'build/js/bundle.min.js': 'build/js/bundle.js'
                 }
@@ -30,5 +30,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-less');
+
     grunt.registerTask('default', ['jshint']);
+    grunt.registerTask('js', 'Concatinate and minify static JS assets', ['concat:js', 'uglify:bundle']);
 };
