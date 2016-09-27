@@ -32,12 +32,19 @@ module.exports = function(grunt) {
                 dest: 'build/img/icons.png',
                 destCss: 'build/css/icons.css'
             }
+        },
+
+        clean: {
+            js: 'build/js',
+            css: 'build/css',
+            less: 'public/**/*.css'
         }
     });
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-spritesmith');
 
     grunt.registerTask('default', ['jshint']);
