@@ -1,6 +1,11 @@
 module.exports = function(grunt) {
     grunt.initConfig({
-        jshint: ['Gruntfile.js'],
+        jshint: {
+            client: [
+                'public/js/**/*.js',
+                '!public/js/vendor'
+            ]
+        },
 
         less: {
             compile: {
